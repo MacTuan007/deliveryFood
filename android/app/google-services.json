@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "640146038501",
+    "project_id": "deliveryfood-a8649",
+    "storage_bucket": "deliveryfood-a8649.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:640146038501:android:ab3f7bf419b9961a9fbe0c",
+        "android_client_info": {
+          "package_name": "com.hoangexpo2.deliveryClone"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA10QKsCg42_aaGlTztgAqLDd_m1JsAlrU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
