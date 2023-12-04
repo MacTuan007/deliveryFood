@@ -9,6 +9,7 @@ import SwipeableRow from '@/Components/SwipeableRow';
 
 const Basket = () => {
   const { products, total, clearCart, reduceProduct } = useBasketStore();
+  console.log(products,total);
   const [order, setOrder] = useState(false);
 
   const FEES = {
@@ -45,7 +46,7 @@ const Basket = () => {
                 <View style={styles.row}>
                   <Text style={{ color: Colors.primary, fontSize: 18 }}>{item.quantity}x</Text>
                   <Text style={{ flex: 1, fontSize: 18 }}>{item.name}</Text>
-                  <Text style={{ fontSize: 18 }}>${item.price * item.quantity}</Text>
+                  <Text style={{ fontSize: 18 }}>${Number(item.price) * item.quantity}</Text>
                 </View>
               </SwipeableRow>
             )}
@@ -69,7 +70,7 @@ const Basket = () => {
 
                 <View style={styles.totalRow}>
                   <Text style={styles.total}>Order Total</Text>
-                  <Text style={{ fontSize: 18, fontWeight: 'bold' }}>${(total + FEES.service + FEES.delivery).toFixed(2)}</Text>
+                  <Text style={{ fontSize: 18, fontWeight: 'bold' }}>${(total + FEES.service + FEES.delivery).toFixed(0)}</Text>
                 </View>
               </View>
             }

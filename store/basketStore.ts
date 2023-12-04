@@ -24,7 +24,7 @@ const useBasketStore = create<BasketState>()((set) => ({
   addProduct: (product) => {
     set((state) => {
       state.items += 1;
-      state.total += product.price;
+      state.total += Number(product.price);
       const hasProduct = state.products.find((p) => p.id === product.id);
 
       if (hasProduct) {
@@ -37,7 +37,7 @@ const useBasketStore = create<BasketState>()((set) => ({
   },
   reduceProduct: (product) => {
     set((state) => {
-      state.total -= product.price;
+      state.total -= Number(product.price);
       state.items -= 1;
       return {
         products: state.products
