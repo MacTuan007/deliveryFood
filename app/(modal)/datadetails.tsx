@@ -8,8 +8,16 @@ import Animated, { useAnimatedStyle, useSharedValue, withTiming } from 'react-na
 import useBasketStore from '@/store/basketStore';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
-const DataDetails = (props : any) : JSX.Element => {
-    const {restaurant} = props;
+const DataDetails = (props:any) : JSX.Element => {
+  const {restaurant} = props;
+  if (!Array.isArray(restaurant) || restaurant.length === 0) {
+    return (
+      <View>
+        <Text>No restaurant data available</Text>
+      </View>
+    );
+  }
+   
     console.log(restaurant)
     const navigation = useNavigation();
     const [activeIndex, setActiveIndex] = useState(0);
@@ -21,6 +29,8 @@ const DataDetails = (props : any) : JSX.Element => {
 
     const scrollRef = useRef<ScrollView>(null);
     const itemsRef = useRef<TouchableOpacity[]>([]);
+
+
 
     const DATA = restaurant.food.map((item : any, index: number) => ({
         title: item.category,
@@ -84,6 +94,7 @@ const DataDetails = (props : any) : JSX.Element => {
         </Link>
       );
   return (
+    
     <>
       <ParallaxScrollView
         scrollEvent={onScroll}
