@@ -1,74 +1,46 @@
 [
     {
-        "name": "Acai",
+        "name": "Bánh Canh",
         "count": 7
     },
     {
-        "name": "African",
+        "name": "BBQ",
         "count": 9
     },
     {
-        "name": "Alcohol",
+        "name": "Bún bò",
         "count": 330
     },
     {
-        "name": "American",
+        "name": "Chả cá",
         "count": 201
     },
     {
-        "name": "BBQ",
+        "name": "Chả cớm",
         "count": 73
     },
     {
-        "name": "Brunch",
+        "name": "Canh",
         "count": 118
     },
     {
-        "name": "Cakes",
+        "name": "Mì",
         "count": 36
     },
     {
-        "name": "Dessert",
+        "name": "Mắm",
         "count": 282
     },
     {
-        "name": "Falafel",
+        "name": "Mực",
         "count": 30
     },
     {
-        "name": "German",
+        "name": "Bún đậu",
         "count": 5
     },
     {
-        "name": "Healthy",
+        "name": "Nui",
         "count": 247
-    },
-    {
-        "name": "Indian",
-        "count": 112
-    },
-    {
-        "name": "Meal Deal",
-        "count": 129
-    },
-    {
-        "name": "Pancakes",
-        "count": 15
-    },
-    {
-        "name": "Pizza",
-        "count": 208
-    },
-    {
-        "name": "Soup",
-        "count": 8
-    },
-    {
-        "name": "Takeaways",
-        "count": 87
-    },
-    {
-        "name": "Wraps",
-        "count": 99
     }
 ]
