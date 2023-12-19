@@ -13,8 +13,8 @@ const Basket = () => {
   const [order, setOrder] = useState(false);
 
   const FEES = {
-    service: 2.99,
-    delivery: 5.99,
+    service: 5000,
+    delivery: 10000,
   };
 
   const startCheckout = () => {
@@ -27,10 +27,10 @@ const Basket = () => {
       {order && <ConfettiCannon count={200} origin={{ x: -10, y: 0 }} fallSpeed={2500} fadeOut={true} autoStart={true} />}
       {order && (
         <View style={{ marginTop: '50%', padding: 20, alignItems: 'center' }}>
-          <Text style={{ fontSize: 24, fontWeight: 'bold', textAlign: 'center' }}>Thank you for your order!</Text>
+          <Text style={{ fontSize: 24, fontWeight: 'bold', textAlign: 'center' }}>Cảm ơn vì đã đặt đồ ăn ở đây</Text>
           <Link href={'/'} asChild>
             <TouchableOpacity style={styles.orderBtn}>
-              <Text style={styles.footerText}>New order</Text>
+              <Text style={styles.footerText}>Tiếp tục đặt hàng</Text>
             </TouchableOpacity>
           </Link>
         </View>
@@ -39,7 +39,7 @@ const Basket = () => {
         <>
           <FlatList
             data={products}
-            ListHeaderComponent={<Text style={styles.section}>Items</Text>}
+            ListHeaderComponent={<Text style={styles.section}>Sản phẩm</Text>}
             ItemSeparatorComponent={() => <View style={{ height: 1, backgroundColor: Colors.grey }} />}
             renderItem={({ item }) => (
               <SwipeableRow onDelete={() => reduceProduct(item)}>
@@ -54,23 +54,23 @@ const Basket = () => {
               <View>
                 <View style={{ height: 1, backgroundColor: Colors.grey }}></View>
                 <View style={styles.totalRow}>
-                  <Text style={styles.total}>Subtotal</Text>
-                  <Text style={{ fontSize: 18 }}>${total}</Text>
+                  <Text style={styles.total}>Tổng thu</Text>
+                  <Text style={{ fontSize: 18 }}>{total}VND</Text>
                 </View>
 
                 <View style={styles.totalRow}>
-                  <Text style={styles.total}>Service fee</Text>
-                  <Text style={{ fontSize: 18 }}>${FEES.service}</Text>
+                  <Text style={styles.total}>Phí dịch vụ</Text>
+                  <Text style={{ fontSize: 18 }}>{FEES.service}VND</Text>
                 </View>
 
                 <View style={styles.totalRow}>
-                  <Text style={styles.total}>Delivery fee</Text>
-                  <Text style={{ fontSize: 18 }}>${FEES.delivery}</Text>
+                  <Text style={styles.total}>Phí vận chuyển</Text>
+                  <Text style={{ fontSize: 18 }}>{FEES.delivery}VND</Text>
                 </View>
 
                 <View style={styles.totalRow}>
-                  <Text style={styles.total}>Order Total</Text>
-                  <Text style={{ fontSize: 18, fontWeight: 'bold' }}>${(total + FEES.service + FEES.delivery).toFixed(0)}</Text>
+                  <Text style={styles.total}>Tổng thanh toán</Text>
+                  <Text style={{ fontSize: 18, fontWeight: 'bold' }}>{(total + FEES.service + FEES.delivery).toFixed(0)}VND</Text>
                 </View>
               </View>
             }
@@ -79,7 +79,7 @@ const Basket = () => {
           <View style={styles.footer}>
             <SafeAreaView edges={['bottom']} style={{ backgroundColor: '#fff' }}>
               <TouchableOpacity style={styles.fullButton} onPress={startCheckout}>
-                <Text style={styles.footerText}>Order now</Text>
+                <Text style={styles.footerText}>Đặt ngay</Text>
               </TouchableOpacity>
             </SafeAreaView>
           </View>

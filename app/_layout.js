@@ -27,7 +27,7 @@ export default function RootLayoutNav() {
   return (
     <BottomSheetModalProvider>
       <Stack.Navigator initialRouteName="index">
-        <Stack.Screen name="index" component={Index} />
+        <Stack.Screen name="index" component={Index} options={{headerShown: false}} />
         <Stack.Screen
           component={Page}
           name="home"
@@ -42,6 +42,7 @@ export default function RootLayoutNav() {
         <Stack.Screen
           name="signin"
           component={Signin}
+          options={{headerShown: false}}
         />
         <Stack.Screen
           name="(modal)/filter"

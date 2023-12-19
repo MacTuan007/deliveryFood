@@ -6,5 +6,5 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["**/*.ts", "**/*.tsx", ".expo/types/**/*.ts", "expo-env.d.ts", "app/details.js", "app/(modal)/login.js", "app/index.js", "app/_layout.js"]
+  "include": ["**/*.ts", "**/*.tsx", ".expo/types/**/*.ts", "expo-env.d.ts", "app/details.js", "app/(modal)/login.js", "app/index.js", "app/_layout.js", "app/signin.js"]
 }

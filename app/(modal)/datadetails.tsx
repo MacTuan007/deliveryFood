@@ -10,15 +10,6 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 
 const DataDetails = (props:any) : JSX.Element => {
   const {restaurant} = props;
-  if (!Array.isArray(restaurant) || restaurant.length === 0) {
-    return (
-      <View>
-        <Text>No restaurant data available</Text>
-      </View>
-    );
-  }
-   
-    console.log(restaurant)
     const navigation = useNavigation();
     const [activeIndex, setActiveIndex] = useState(0);
 
@@ -87,7 +78,7 @@ const DataDetails = (props:any) : JSX.Element => {
             <View style={{ flex: 1 }}>
               <Text style={styles.dish}>{item.name}</Text>
               <Text style={styles.dishText}>{item.info}</Text>
-              <Text style={styles.dishText}>${item.price}</Text>
+              <Text style={styles.dishText}>{item.price}VND</Text>
             </View>
             <Image source={{uri:item.img}} style={styles.dishImage} />
           </TouchableOpacity>
@@ -152,8 +143,8 @@ const DataDetails = (props:any) : JSX.Element => {
             <Link href="/basket" asChild>
               <TouchableOpacity style={styles.fullButton}>
                 <Text style={styles.basket}>{items}</Text>
-                <Text style={styles.footerText}>View Basket</Text>
-                <Text style={styles.basketTotal}>${total}</Text>
+                <Text style={styles.footerText}>Xem giỏ hàng</Text>
+                <Text style={styles.basketTotal}>{total}VND</Text>
               </TouchableOpacity>
             </Link>
           </SafeAreaView>

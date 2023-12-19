@@ -95,7 +95,7 @@ const Details = () => {
         <View style={{ flex: 1 }}>
           <Text style={styles.dish}>{item.name}</Text>
           <Text style={styles.dishText}>{item.info}</Text>
-          <Text style={styles.dishText}>${item.price}</Text>
+          <Text style={styles.dishText}>{item.price}VND</Text>
         </View>
         <Image source={item.img} style={styles.dishImage} />
       </TouchableOpacity>
@@ -162,8 +162,8 @@ const Details = () => {
             <Link href="/basket" asChild>
               <TouchableOpacity style={styles.fullButton}>
                 <Text style={styles.basket}>{items}</Text>
-                <Text style={styles.footerText}>View Basket</Text>
-                <Text style={styles.basketTotal}>${total}</Text>
+                <Text style={styles.footerText}>Xem giỏ hàng</Text>
+                <Text style={styles.basketTotal}>{total}VND</Text>
               </TouchableOpacity>
             </Link>
           </SafeAreaView>

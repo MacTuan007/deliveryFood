@@ -1,37 +1,58 @@
-import React, { useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import { View, Text, TouchableOpacity, Image, TextInput } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import auth from '@react-native-firebase/auth';
 import { Button } from 'react-native-paper';
+import { Link } from 'expo-router';
 
 const LoginScreen = () => {
-    const navigation = useNavigation();
-    const [tk, settk] = useState("")
-    const [mk, setmk] = useState("")
-    console.log(tk, mk)
+    const navigation = useNavigation()
+    const [tk, settk] = useState('')
+    const [mk, setmk] = useState('')
     const [ErrorMessage, setErrorMessage] = useState('');
-    const onClickDangNhap = async () => {
-            await auth().signInWithEmailAndPassword(tk, mk).then(() => {
+
+    function ktthongtin(tk, mk) {
+        if (tk === '' || mk === '') {
+            setErrorMessage('Vui lòng nhập đầy đủ thông tin')
+            return false;
+        }
+        return true;
+
+    }
+    const onClickDangNhap = () => {
+        if (ktthongtin(tk, mk))
+            auth()
+                .signInWithEmailAndPassword(tk, mk)
+                .then(() => {
                     console.log('đăng nhập thành công')
                     setErrorMessage('')
-                    navigation.navigate('home');
-                    
+                    settk('')
+                    setmk('')
+                    navigation.navigate('home')
                 })
                 .catch((e) => {
                     console.error(e)
                     setErrorMessage('Sai tài khoản hoặc mật khẩu')
                 })
     }
-    const dangky = () => {
-        auth().createUserWithEmailAndPassword("abcd@gmail.com", "123456").then(() => {
-            console.log('đăng ký thành công')
-            navigation.navigate('home');
-        })
-    }
+
     return (
         <View style={{
             flex: 1,
         }}>
+
+            {/* Logo */}
+            <View style={{
+                marginTop: 20,
+                flex: 3,
+                justifyContent: 'center',
+                alignItems: 'center',
+
+            }}>
+                <Image source={require('./img/fooddome_118034.png')}
+                    resizeMode="contain" />
+            </View>
+
             {/* khung dang nhap */}
             <View style={{
                 margin: 20,
@@ -62,28 +83,23 @@ const LoginScreen = () => {
                     onChangeText={text => setmk(text)}>
                 </TextInput>
                 <View style={{
-                    backgroundColor: "#999999",
-                    marginTop: 30,
-                    justifyContent: 'center',
-                    alignItems: 'center',
+
                 }}>
-                    <TouchableOpacity onPress={()=>onClickDangNhap}>
+                    <Button onPress={onClickDangNhap}
+                        style={{
+                            backgroundColor: "#999999",
+                            marginTop: 30,
+                            justifyContent: 'center',
+                        }}>
                         <Text style={{
-                            fontSize: 40,
+                            fontSize: 20,
                         }}>Đăng Nhập</Text>
-                    </TouchableOpacity>
-                    <Button mode='outlined' onPress={onClickDangNhap}>Đăng nhập</Button>
+                    </Button>
                 </View>
                 <View style={{
                     justifyContent: 'center',
                     alignItems: 'center',
                 }}>
-                    <TouchableOpacity onPress={()=>navigation.navigate("home")}>
-                        <Text style={{
-                            fontSize: 40,
-                        }}>Đăng ký</Text>
-                    </TouchableOpacity>
-                    
                     <Text style={{
                         color: 'red',
                         fontSize: 20,
@@ -100,14 +116,14 @@ const LoginScreen = () => {
                 <Text style={{
                     fontSize: 16,
                 }}>Chưa có tài khoản:</Text>
-
-                <Text style={{
-                    fontSize: 16,
-                    color: "red",
-                }}>Đăng ký ngay</Text>
+                <Link href={"/signin"}>
+                    <Text style={{
+                        fontSize: 16,
+                        color: "red",
+                    }}>Đăng ký ngay</Text>
+                </Link>
             </View>
         </View>
-    );
+    )
 };
-
 export default LoginScreen;

@@ -12,9 +12,9 @@ const Page = () => {
     <SafeAreaView style={styles.container}>
       <ScrollView contentContainerStyle={{ paddingBottom: 40 }}>
         <Categories />
-        <Text style={styles.header}>Top picks in your neighbourhood</Text>
+        <Text style={styles.header}>Những món ăn được lựa chọn nhiều nhất</Text>
         <Restaurants />
-        <Text style={styles.header}>Offers near you</Text>
+        <Text style={styles.header}>Gợi ý gần bạn</Text>
         <Restaurants />
       </ScrollView>
     </SafeAreaView>

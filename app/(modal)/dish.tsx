@@ -55,7 +55,7 @@ function Dish() {
 
         <View style={styles.footer}>
           <TouchableOpacity style={styles.fullButton} onPress={addToCart}>
-            <Text style={styles.footerText}>Add for ${price}</Text>
+            <Text style={styles.footerText}>Thêm với giá: {price}VND</Text>
           </TouchableOpacity>
         </View>
       </View>
