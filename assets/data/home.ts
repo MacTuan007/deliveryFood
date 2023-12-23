@@ -1,27 +1,23 @@
 export const categories = [
   {
-    text: 'Restaurants',
+    text: 'Nhà Hàng',
     img: require('@/assets/data/c1.png'),
   },
   {
-    text: 'Grocerys',
+    text: 'Cửa tiệm',
     img: require('@/assets/data/c2.png'),
   },
   {
-    text: 'Offers',
+    text: 'Ưu Đãi',
     img: require('@/assets/data/c3.png'),
   },
   {
-    text: 'Pickup',
+    text: 'Mang đi',
     img: require('@/assets/data/c4.png'),
   },
   {
-    text: 'HOP',
+    text: 'Phổ biến',
     img: require('@/assets/data/c5.png'),
-  },
-  {
-    text: 'Pharmacy',
-    img: require('@/assets/data/c6.png'),
   },
 ];
 
