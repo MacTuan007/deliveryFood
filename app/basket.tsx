@@ -28,7 +28,7 @@ const Basket = () => {
       {order && (
         <View style={{ marginTop: '50%', padding: 20, alignItems: 'center' }}>
           <Text style={{ fontSize: 24, fontWeight: 'bold', textAlign: 'center' }}>Cảm ơn vì đã đặt đồ ăn ở đây</Text>
-          <Link href={'/'} asChild>
+          <Link href={'/home'} asChild>
             <TouchableOpacity style={styles.orderBtn}>
               <Text style={styles.footerText}>Tiếp tục đặt hàng</Text>
             </TouchableOpacity>
